@@ -13,6 +13,37 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .w3-text-black, .w3-hover-text-black:hover {
     margin-top:5px!important;
 }
+
+.button {
+	font-family: sans-serif;
+	font-size: 16px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 100px;
+	height: 100px;
+	transition: opacity .5s;
+	cursor: pointer;
+	background: #045ffe;
+	border-radius: 20px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button:hover {
+	opacity: .6;
+}
+
+.button:active {
+	opacity: .4;
+}
+
+.button.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
 </style>
 </head>
 <body class="w3-light-grey">
