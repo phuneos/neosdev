@@ -145,7 +145,44 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <i class="fa fa-linkedin w3-hover-opacity"></i>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
+<div class="button hidden">Open Chat</div>
 
+    <script>
+        var button = document.querySelector('.button')
+        button.addEventListener('click', onButtonClick)
+
+        function onButtonClick () {
+            BE_API.openChatWindow()
+            hideButton()
+        }
+
+        function showButton () {
+            button.classList.remove('hidden')
+        }
+
+        function hideButton () {
+            button.classList.add('hidden')
+        }
+
+        window.BE_API = window.BE_API || {}
+
+        window.BE_API.onLoad = function () {
+            window.BE_API.hideChatWindow()
+            showButton()
+        }
+
+        window.BE_API.onChatWindowOpen = function () {
+            hideButton()
+        }
+
+        window.BE_API.onChatWindowClose = function () {
+            window.BE_API.hideChatWindow()
+        }
+
+        window.BE_API.onChatWindowHide = function () {
+            showButton()
+        }
+    </script>
 <!-- Start of ChatBot (www.chatbot.com) code -->
 <script type="text/javascript">
     window.__be = window.__be || {};
