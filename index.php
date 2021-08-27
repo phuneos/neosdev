@@ -94,12 +94,8 @@
 //            xhr.open('POST', 'https://neos-dev.cybozu.com/k/v1/record.json?');
         xhr.open('POST', 'https://neos-dev.cybozu.com/k/guest/18/v1/record.json?');
         xhr.setRequestHeader('X-Cybozu-API-Token', 'jdXNa9a61Xo6YeGGMplhF6kTzn0lgtTfFs4kicNH');
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-//            xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+        xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-        xhr.setRequestHeader('Access-Control-Allow-Methods', '*');
-        xhr.setRequestHeader('Access-Control-Max-Age', '6000');
         var jsonString = JSON.stringify(body);
         xhr.onload = function() {
             var res = JSON.parse(xhr.responseText);
